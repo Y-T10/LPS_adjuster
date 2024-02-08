@@ -10,7 +10,11 @@ project(cpp_template
 # ビルド周りの設定
 option(BUILD_SHARED_LIBS "Build shared libraries." OFF)
 option(CMAKE_BUILD_TYPE "Build type." Release)
-option(CMAKE_EXPORT_COMPILE_COMMANDS "Generate `compile_commands.json` in build directories." 1)
+
+# CMAKE_EXPORT_COMPILE_COMMANDSの既定値を設定する
+if ((NOT (DEFINED $ENV{CMAKE_EXPORT_COMPILE_COMMANDS})) AND (DEFINED CMAKE_EXPORT_COMPILE_COMMANDS))
+  set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+endif()
 
 # CMakeのポリシーを設定する
 cmake_policy(SET CMP0076 NEW)
