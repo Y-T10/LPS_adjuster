@@ -1,9 +1,9 @@
 block(SCOPE_FOR POLICIES)
 function(set_target_build_internal TargetName)
     # 引数をパースする
-    set(_arg Debug)
+    set(_opt "Debug")
     set(_varg SOURCE LIBPRIV LIBPUB)
-	cmake_parse_arguments(Param "" "${_arg}" "${_varg}" ${ARGN})
+	cmake_parse_arguments(Param "${_opt}" "" "${_varg}" ${ARGN})
     
     if(NOT (DEFINED Param_SOURCE))
         message(FATAL_ERROR "ソースファイルが指定されていません．")
@@ -24,9 +24,10 @@ function(__add_obj_internal Directory EXE)
     get_filename_component(Name ${Directory} NAME_WE)
     if(${EXE})
         add_executable(${Name})
-	set_target_properties(
-            ${Name} PROPERTIES RUNTIME_OUTPUT_DIRECTORY
-            ${CMAKE_SOURCE_DIR}/bin)
+        set_target_properties(${Name}
+            PROPERTIES RUNTIME_OUTPUT_DIRECTORY
+            ${CMAKE_SOURCE_DIR}/bin
+        )
     else()
         add_library(${Name})
     endif()
@@ -47,7 +48,7 @@ endfunction(add_exe_directory)
 function(add_interface_directory Directory)
     set(_inter_opt Debug)
     set(_inter_varg LIBPRIV LIBPUB)
-    cmake_parse_arguments(arg "${_inter_opt}" "${_inter_varg}" ${ARGN})
+    cmake_parse_arguments(arg "${_inter_opt}" "" "${_inter_varg}" ${ARGN})
 
     ## 新しいターゲットを追加する
     get_filename_component(Name ${arg_Directory} NAME_WE)
@@ -57,5 +58,5 @@ function(add_interface_directory Directory)
     target_link_libraries(${Name} INTERFACE ${arg_LIBPUB})
     target_link_libraries(${Name} INTERFACE ${arg_LIBPRIV})
     target_compile_options(${Name} INTERFACE $<$<BOOL:${arg_Debug}>:-g3>)
-endfunction(add_exe_directory)
+endfunction(add_interface_directory)
 endblock()
