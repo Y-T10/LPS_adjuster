@@ -44,11 +44,11 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPM.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/AddTargetHelper.cmake)
 
 # CPMを用いてネット上のパッケージを取り込む
-CPMAddPackage(
-    NAME fmt
-    GITHUB_REPOSITORY fmtlib/fmt
-    GIT_TAG 10.2.1
-)
+#CPMAddPackage(
+#    NAME fmt
+#    GITHUB_REPOSITORY fmtlib/fmt
+#    GIT_TAG 10.2.1
+#)
 
 # システム内のパッケージを読み込む
 find_package(Threads REQUIRED)
