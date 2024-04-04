@@ -1,7 +1,7 @@
-#include "fmt/core.h"
-#include "fmt/printf.h"
+#include <iostream>
+#include <format>
 
 int main(int argc, char* argv[]) {
-    fmt::println("sample program with fmt!");
+    std::cout << std::format("Hellow, C++23!") << std::endl;
     return 0;
 }

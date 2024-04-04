@@ -29,7 +29,7 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 add_compile_options(-Wall $<$<CONFIG:Debug>:-g3>)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 # CPMをダウンロードする
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/DownloadFile.cmake)
@@ -44,11 +44,11 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPM.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/AddTargetHelper.cmake)
 
 # CPMを用いてネット上のパッケージを取り込む
-CPMAddPackage(
-    NAME fmt
-    GITHUB_REPOSITORY fmtlib/fmt
-    GIT_TAG 10.2.1
-)
+#CPMAddPackage(
+#    NAME fmt
+#    GITHUB_REPOSITORY fmtlib/fmt
+#    GIT_TAG 10.2.1
+#)
 
 # システム内のパッケージを読み込む
 find_package(Threads REQUIRED)
