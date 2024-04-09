@@ -4,3 +4,6 @@
 
 # clangd関連
 *cache*/
+
+# cmake関連
+cmake/CPM.cmake
