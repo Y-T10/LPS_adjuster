@@ -20,11 +20,8 @@ endif()
 # CMakeのポリシーを設定する
 cmake_policy(SET CMP0076 NEW)
 cmake_policy(SET CMP0128 NEW)
-set(CMAKE_POLICY_DEFAULT_CMP0128 NEW)
 cmake_policy(SET CMP0074 NEW)
-set(CMAKE_POLICY_DEFAULT_CMP0074 NEW)
 cmake_policy(SET CMP0077 NEW)
-set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
 # C++コンパイラに渡すオプションを設定する
 add_compile_options(-Wall $<$<CONFIG:Debug>:-g3>)
