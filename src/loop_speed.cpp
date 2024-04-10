@@ -97,12 +97,13 @@ void AdjustLPS::adjust_fps() const{
 
     //経過時間が1sより小さいかを確認する
     constexpr t_duration one_second = t_duration(seconds(1));
-    if(sum_spent_time < one_second){
-        //遅延時間を求める
-        const t_duration delay_time = one_second - sum_spent_time;
-        assert(delay_time.count() > 0);
-        //遅延させる
-        const t_duration SPF = t_duration(one_second.count() / m_target_lps);
-        std::this_thread::sleep_for(delay_time >= SPF ? SPF: delay_time);
+    if (sum_spent_time >= one_second) {
+        return;
     }
+    //遅延時間を求める
+    const t_duration delay_time = one_second - sum_spent_time;
+    assert(delay_time.count() > 0);
+    //遅延させる
+    const t_duration SPF = t_duration(one_second.count() / m_target_lps);
+    std::this_thread::sleep_for(delay_time >= SPF ? SPF: delay_time);
 }
