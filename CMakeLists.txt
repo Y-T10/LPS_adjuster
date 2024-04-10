@@ -31,7 +31,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 # システム内のパッケージを読み込む
 find_package(Threads REQUIRED)
-#find_package(Boost REQUIRED)
 
 # Add sub directories
 add_subdirectory(src)
