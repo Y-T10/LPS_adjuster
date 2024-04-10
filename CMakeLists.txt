@@ -32,6 +32,14 @@ set(CMAKE_CXX_STANDARD 23)
 # システム内のパッケージを読み込む
 find_package(Threads REQUIRED)
 
+# ライブラリの宣言
+add_library(${CMAKE_PROJECT_NAME})
+add_library(${CMAKE_PROJECT_NAME}::${CMAKE_PROJECT_NAME} ALIAS ${CMAKE_PROJECT_NAME})
+
+# ライブラリの設定
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC Threads)
+
 # Add sub directories
 add_subdirectory(src)
 
