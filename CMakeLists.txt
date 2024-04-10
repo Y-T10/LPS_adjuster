@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 # このプロジェクトの概要を設定する
 project(
-    LoopTime
+    TCL
     VERSION 0.0.1
     LANGUAGES CXX
     DESCRIPTION "Control repeat count per second."
