@@ -1,14 +1,9 @@
 #pragma once
 
 #include<chrono>
-#include<thread>
 #include<cassert>
 #include<cstdint>
 #include<deque>
-#include<numeric>
-#include<algorithm>
-#include<string>
-#include<sstream>
 
 /**
  * @class AdjustLPS

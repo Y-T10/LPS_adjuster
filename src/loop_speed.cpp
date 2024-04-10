@@ -1,5 +1,9 @@
 #include"loop_speed.hpp"
 
+#include<numeric>
+#include<algorithm>
+#include<thread>
+
 //usingディレクティブ
 using namespace std::chrono;
 
