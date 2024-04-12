@@ -38,7 +38,7 @@ add_library(${CMAKE_PROJECT_NAME}::${CMAKE_PROJECT_NAME} ALIAS ${CMAKE_PROJECT_N
 
 # ライブラリの設定
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC Threads)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC Threads::Threads)
 
 # Add sub directories
 add_subdirectory(src)
