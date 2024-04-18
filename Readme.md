@@ -1,4 +1,5 @@
-# Personal Cpp Template
+# Time Controlled Loop
+Time Controlled Loop (TCL) は、決まった時間間隔で繰り返すループ処理を実現するライブラリです．
 
 ## ライセンス表記
 - doctest
